@@ -1,0 +1,21 @@
+create table triangle_result
+(
+side1 int,
+side2 int,
+side3 int
+exist boolean
+);
+
+delimiter //
+create function FUNC1(a int, b int, c int)
+returns boolean
+begin
+if a<b+c and b<a+c and c<a+b
+	then return true;
+else
+	return false;
+end if;
+insert into triangle_result values(a, b, c);
+select * from triangle_result
+end; //
+delimiter ;

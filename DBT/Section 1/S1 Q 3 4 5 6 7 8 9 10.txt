@@ -1,0 +1,82 @@
+3.
+select * from emp
+where sal >= 2500 and sal <= 5000;
+
+7839	KING	MANAGER	1991-11-17	5000		10
+7698	BLAKE	CLERK	1981-05-01	2850		30
+7566	JONES	CLERK	1981-04-02	2975		20
+
+4.
+select ename from emp
+order by ename desc;
+
+MARTIN
+KING
+JONES
+CLARK
+BLAKE
+ALLEN
+
+5.
+select lower(job) as jobs from emp;
+
+manager
+clerk
+manager
+clerk
+salesman
+salesman
+
+6.
+select ename as EName, length(ename) as "EName Length" from emp;
+
+KING	4
+BLAKE	5
+CLARK	5
+JONES	5
+MARTIN	6
+ALLEN	5
+
+7.
+select deptno, count(deptno) as "count" from emp
+group by deptno
+order by 1;
+
+10	2
+20	1
+30	3
+
+8.
+select dept.dname, emp.ename from emp, dept
+where dept.deptno = emp.deptno
+order by dname, ename;
+
+ACCOUNTING	CLARK
+ACCOUNTING	KING
+RESEARCH	JONES
+SALES	ALLEN
+SALES	BLAKE
+SALES	MARTIN
+
+9.
+select ename as ENAME, instr(ename, 'ar') as Position from emp
+order by ename;
+
+ALLEN	0
+BLAKE	0
+CLARK	3
+JONES	0
+KING	0
+MARTIN	2
+
+
+10.
+select ename, sal*0.2 as "HRA" from emp;
+
+KING	1000
+BLAKE	570
+CLARK	490
+JONES	595
+MARTIN	250
+ALLEN	320
+
